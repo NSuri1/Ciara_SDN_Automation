@@ -4,7 +4,6 @@ from elasticsearch import helpers
 import sys
 import datetime
 import configparser
-import json
 
 
 def get_commodity_vlan_ids(ipam):
