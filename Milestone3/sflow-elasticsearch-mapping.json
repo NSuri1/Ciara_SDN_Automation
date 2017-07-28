@@ -1,0 +1,120 @@
+{
+  "template": "sflow-*",
+  "mappings": {
+    "sflow": {
+      "properties": {
+        "@timestamp" : {
+            "type" : "date"
+          },
+          "@version" : {
+            "type" : "short"
+          },
+          "EtherType" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "IPProtocol" : {
+            "type" : "integer"
+          },
+          "IPTOS" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "PacketSize" : {
+            "type" : "short"
+          },
+          "ReporterIP" : {
+            "type" : "ip"
+          },
+          "SampleRate" : {
+            "type" : "short"
+          },
+          "dstAS" : {
+            "properties" : {
+              "asn" : {
+                "type" : "integer"
+              }
+            }
+          },
+          "dstIP" : {
+            "type" : "ip"
+          },
+          "dstMAC" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "dstPort" : {
+            "type" : "integer"
+          },
+          "in_vlan" : {
+            "type" : "short"
+          },
+          "inputPort" : {
+            "type" : "integer"
+          },
+          "outputPort" : {
+            "type" : "integer"
+          },
+          "srcAS" : {
+            "properties" : {
+              "asn" : {
+                "type" : "integer"
+              }
+            }
+          },
+          "srcIP" : {
+            "type" : "ip"
+          },
+          "srcMAC" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "srcPort" : {
+            "type" : "integer"
+          },
+          "tags" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "type" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          }
+      }
+    }
+    
+  }
+}
+
+
+
