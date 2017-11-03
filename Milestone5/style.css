@@ -1,0 +1,21 @@
+.box {
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 10%;
+	min-height: 240px;
+}
+
+.image {
+	width: 70%;
+	padding-top: 5px;
+}
+
+.caption {
+	color: #000;
+	padding-top: 5%;
+	font-size: 1.7em;
+	text-align: center;
+}
