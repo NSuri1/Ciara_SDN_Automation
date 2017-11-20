@@ -1,0 +1,3003 @@
+
+{
+    "annotations": {
+        "list": []
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "hideControls": false,
+    "id": 11,
+    "links": [],
+    "refresh": false,
+    "rows": [{
+            "collapse": false,
+            "height": 46,
+            "panels": [{
+                "content": "#### AmLight-ExP Link Utilization Visualization\n\nThe following charts display real time link utilization of the links that connect South America to the U.S.",
+                "id": 30,
+                "links": [],
+                "mode": "markdown",
+                "span": 12,
+                "title": "",
+                "type": "text"
+            }],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 261,
+            "panels": [{
+                    "content": "##### AmLight-ExP Links via Atlantic\n\nThe following graphs shows the traffic rate for incoming and outgoing data through AmLight-ExP's 10G and 100G links from Miami to Sao Paulo/Brazil.\n\nClick on the graph title to see more options.",
+                    "id": 14,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 2,
+                    "title": "",
+                    "type": "text"
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 3,
+                    "id": 19,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 2,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 10GigabitEthernet2/5"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 10GigabitEthernet2/5"
+                            },
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "10G Link from Miami to Sao Paulo via Atlantic Ocean",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "bps",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 3,
+                    "id": 23,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 2,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 100GigabitEthernet7/2"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 100GigabitEthernet7/2"
+                            },
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "100G Link Miami to Sao Paulo via Atlantic Ocean",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "bps",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": true,
+            "title": "Atlantic Links",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 268,
+            "panels": [{
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 3,
+                    "id": 21,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 2,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT02"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 10GigabitEthernet2/5"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 10GigabitEthernet2/5"
+                            },
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "10G Link from Miami to Santiago via Pacific Ocean",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "bps",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 3,
+                    "id": 24,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 2,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT02"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 100GigabitEthernet7/2"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT02"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 100GigabitEthernet7/2"
+                            },
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "100G Link from Miami to Sao Paulo via Pacific Ocean",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "bps",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "content": "##### AmLight-ExP Links via Pacific \n\nThe following graphs shows the traffic rate for incoming and outgoing data through AmLight-ExP's 10G and 100G links from South America to Miami via Pacific Ocean. \n\nClick on the graph title to see more options.",
+                    "id": 25,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 2,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": true,
+            "title": "Pacific Links",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 214,
+            "panels": [{
+                    "content": "##### AmLight-ExP Terrestrial Links\n\n\nThese links connected Sao Paulo to Santiago, Chile.\n\nClick on graph's title to see more details.",
+                    "id": 15,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 2,
+                    "title": "",
+                    "type": "text"
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 3,
+                    "id": 20,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 2,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "AndesLight"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 10GigabitEthernet2/1"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "AndesLight"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 10GigabitEthernet2/1"
+                            },
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "10G Link from Sao Paulo to Santiago - Terrestrial",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "bps",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 3,
+                    "id": 28,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 2,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "AndesLight"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 100GigabitEthernet3/1"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "AndesLight"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 100GigabitEthernet3/1"
+                            },
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "100G Link from Sao Paulo to Santiago - Terrestrial (Being Activated)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "bps",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": true,
+            "title": "Terrestrial Links",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 238,
+            "panels": [{
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 3,
+                    "id": 12,
+                    "legend": {
+                        "alignAsTable": false,
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "rightSide": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 3,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 100GigabitEthernet6/2"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 100GigabitEthernet6/2"
+                            },
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "100G AtlanticWave Link",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "bps",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 3,
+                    "id": 26,
+                    "legend": {
+                        "alignAsTable": false,
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "rightSide": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 3,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 10GigabitEthernet2/8"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 10GigabitEthernet2/8"
+                            },
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "10G AtlanticWave",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "bps",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 3,
+                    "id": 29,
+                    "legend": {
+                        "alignAsTable": false,
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "rightSide": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 3,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT02"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 10GigabitEthernet1/11"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 10GigabitEthernet1/11"
+                            },
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "10G FLRNet",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "bps",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "content": "##### AmLight-ExP Uplinks to Academic Upstreams\n\nThese links use Florida Lamdba Rail. The 10G AtlanticWave link is a MPLS virtual circuit and the 100G AtlanticWave link is an Alien Wave. FLRNet is a connection to FLR members.  \n\nClick on graph's titles to see more details.",
+                    "id": 27,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 3,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": true,
+            "title": "Academic Uplinks",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 254,
+            "panels": [{
+                    "content": "#### Forwarding Statistics\n\nAmLight-ExP supports SDN circuits and VLAN-based circuits. These charts show the number of OpenFlow entries installed and the number of VLANs created.",
+                    "id": 31,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 2,
+                    "title": "",
+                    "type": "text"
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 1,
+                    "id": 32,
+                    "legend": {
+                        "alignAsTable": false,
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": false,
+                        "total": true,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": true,
+                    "steppedLine": true,
+                    "targets": [{
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - AndesLight - AmLight"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - AndesLight2 - AmLight"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - SouthernLight - AmLight"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "C",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - MCT01 - AmLight"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "D",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - MCT02 - AmLight"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "E",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - AndesLight - AutoGOLE"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "F",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - AndesLight2 - AutoGOLE"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "G",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - SouthernLight - AutoGOLE"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "H",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - MCT01 - AutoGOLE"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "I",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - MCT02 - AutoGOLE"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "J",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - MCT01 - KytosSC17"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "K",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - MCT02 - KytosSC17"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "L",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "OpenFlow"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "Zabbix servers"
+                            },
+                            "host": {
+                                "filter": "Zabbix server"
+                            },
+                            "item": {
+                                "filter": "Openflow - Number of Flows - SouthernLight - KytosSC17"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "M",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Number of OpenFlow Entries at AmLight",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 1,
+                    "id": 33,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                        "application": {
+                            "filter": "VLANs"
+                        },
+                        "bucketAggs": [{
+                            "field": "@timestamp",
+                            "id": "2",
+                            "settings": {
+                                "interval": "auto",
+                                "min_doc_count": 0,
+                                "trimEdges": 0
+                            },
+                            "type": "date_histogram"
+                        }],
+                        "dsType": "elasticsearch",
+                        "functions": [],
+                        "group": {
+                            "filter": "AMPATH Backbone"
+                        },
+                        "host": {
+                            "filter": "Brocade MCT01"
+                        },
+                        "item": {
+                            "filter": "Number of VLANs"
+                        },
+                        "metrics": [{
+                            "field": "select field",
+                            "id": "1",
+                            "type": "count"
+                        }],
+                        "mode": 0,
+                        "options": {
+                            "showDisabledItems": false
+                        },
+                        "refId": "A",
+                        "timeField": "@timestamp",
+                        "triggers": {
+                            "acknowledged": 2,
+                            "count": true,
+                            "minSeverity": 3
+                        }
+                    }],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Number of VLANs",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": true,
+            "title": "Forwarding Statistics",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 224,
+            "panels": [{
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 1,
+                    "id": 34,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface 100GigabitEthernet6/1"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Brocade MCT01"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface 100GigabitEthernet6/1"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "SC17 Circuit C18",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Ultralog",
+                    "fill": 1,
+                    "id": 35,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 5,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Dell Z9100ON - Tier 2"
+                            },
+                            "item": {
+                                "filter": "Incoming traffic on interface hundredGigE 1/24"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "A",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        },
+                        {
+                            "application": {
+                                "filter": "Interfaces"
+                            },
+                            "bucketAggs": [{
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }],
+                            "dsType": "elasticsearch",
+                            "functions": [],
+                            "group": {
+                                "filter": "AMPATH Backbone"
+                            },
+                            "host": {
+                                "filter": "Dell Z9100ON - Tier 2"
+                            },
+                            "item": {
+                                "filter": "Outgoing traffic on interface hundredGigE 1/24"
+                            },
+                            "metrics": [{
+                                "field": "select field",
+                                "id": "1",
+                                "type": "count"
+                            }],
+                            "mode": 0,
+                            "options": {
+                                "showDisabledItems": false
+                            },
+                            "refId": "B",
+                            "timeField": "@timestamp",
+                            "triggers": {
+                                "acknowledged": 2,
+                                "count": true,
+                                "minSeverity": 3
+                            }
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "SC17 Circuit 20",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "content": "### SuperComputing 2017 Circuits\n\nCenturyLink provided 100G circuits from Miami to Denver",
+                    "id": 16,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 2,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": true,
+            "title": "SC17 Interfaces",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 301,
+            "panels": [{
+                    "content": "##### Top 10 Source AS Numbers\nThis graph shows the occurrence of the Top 10 Source AS numbers in the selected time frame.",
+                    "id": 7,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 2,
+                    "title": "",
+                    "type": "text"
+                },
+                {
+                    "aliasColors": {},
+                    "bars": true,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "sFlow",
+                    "description": "Top 10 srcAs flows sorted by traffic.",
+                    "fill": 1,
+                    "id": 3,
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": false,
+                        "current": false,
+                        "hideZero": false,
+                        "max": false,
+                        "min": false,
+                        "rightSide": true,
+                        "show": true,
+                        "total": true,
+                        "values": true
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                        "bucketAggs": [{
+                                "fake": true,
+                                "field": "srcAS.asn",
+                                "id": "3",
+                                "settings": {
+                                    "min_doc_count": 1,
+                                    "order": "desc",
+                                    "orderBy": "1",
+                                    "size": "10"
+                                },
+                                "type": "terms"
+                            },
+                            {
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }
+                        ],
+                        "dsType": "elasticsearch",
+                        "hide": false,
+                        "metrics": [{
+                            "field": "PacketSize",
+                            "id": "1",
+                            "inlineScript": "_value * doc['SampleRate'].value",
+                            "meta": {},
+                            "settings": {
+                                "script": {
+                                    "inline": "_value * doc['SampleRate'].value"
+                                }
+                            },
+                            "type": "sum"
+                        }],
+                        "refId": "A",
+                        "timeField": "@timestamp"
+                    }],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Top 10 Source AS Numbers",
+                    "tooltip": {
+                        "shared": false,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": 10,
+                        "mode": "series",
+                        "name": null,
+                        "show": true,
+                        "values": [
+                            "total"
+                        ]
+                    },
+                    "yaxes": [{
+                            "format": "decbytes",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 274,
+            "panels": [{
+                    "aliasColors": {},
+                    "bars": true,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "sFlow",
+                    "description": "Top 10 dstAs flows sorted by traffic.",
+                    "fill": 1,
+                    "id": 8,
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "rightSide": true,
+                        "show": true,
+                        "total": true,
+                        "values": true
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 9,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                        "bucketAggs": [{
+                                "fake": true,
+                                "field": "dstAS.asn",
+                                "id": "3",
+                                "settings": {
+                                    "min_doc_count": 1,
+                                    "order": "desc",
+                                    "orderBy": "1",
+                                    "size": "10"
+                                },
+                                "type": "terms"
+                            },
+                            {
+                                "field": "@timestamp",
+                                "id": "2",
+                                "settings": {
+                                    "interval": "auto",
+                                    "min_doc_count": 0,
+                                    "trimEdges": 0
+                                },
+                                "type": "date_histogram"
+                            }
+                        ],
+                        "dsType": "elasticsearch",
+                        "metrics": [{
+                            "field": "PacketSize",
+                            "id": "1",
+                            "inlineScript": "_value * doc['SampleRate'].value",
+                            "meta": {},
+                            "settings": {
+                                "script": {
+                                    "inline": "_value * doc['SampleRate'].value"
+                                }
+                            },
+                            "type": "sum"
+                        }],
+                        "refId": "A",
+                        "timeField": "@timestamp"
+                    }],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Top 10 Destination AS Numbers",
+                    "tooltip": {
+                        "shared": false,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "series",
+                        "name": null,
+                        "show": true,
+                        "values": [
+                            "total"
+                        ]
+                    },
+                    "yaxes": [{
+                            "format": "decbytes",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "content": "##### Top 10 Destination AS Numbers\nThis graph shows the occurrence of the top 10 destination AS numbers in the selected time frame.",
+                    "id": 17,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 3,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 267,
+            "panels": [{
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "description": "Sum of packet size * sample rate by day.",
+                    "fill": 2,
+                    "id": 2,
+                    "legend": {
+                        "alignAsTable": false,
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "rightSide": false,
+                        "show": false,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 2,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 10,
+                    "stack": false,
+                    "steppedLine": true,
+                    "targets": [{
+                        "bucketAggs": [{
+                            "field": "@timestamp",
+                            "id": "2",
+                            "settings": {
+                                "interval": "1d",
+                                "min_doc_count": 0,
+                                "trimEdges": 0
+                            },
+                            "type": "date_histogram"
+                        }],
+                        "dsType": "elasticsearch",
+                        "metrics": [{
+                            "field": "PacketSize",
+                            "id": "1",
+                            "inlineScript": "_value * doc['SampleRate'].value",
+                            "meta": {},
+                            "settings": {
+                                "script": {
+                                    "inline": "_value * doc['SampleRate'].value"
+                                }
+                            },
+                            "type": "sum"
+                        }],
+                        "refId": "A",
+                        "timeField": "@timestamp"
+                    }],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Daily sFlow Traffic",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "decbytes",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "content": "##### Traffic Per Day\nThis graph shows the total traffic, in TB, passing through our switches by day.",
+                    "id": 6,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 2,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 281,
+            "panels": [{
+                    "content": "##### Packets Collected\nThis graph shows the number of packets collected within the given timeframe.",
+                    "id": 5,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 2,
+                    "title": "",
+                    "type": "text"
+                },
+                {
+                    "cacheTimeout": null,
+                    "colorBackground": false,
+                    "colorValue": false,
+                    "colors": [
+                        "rgba(50, 98, 48, 0.97)",
+                        "rgba(182, 109, 49, 0.89)",
+                        "rgba(9, 1, 1, 0.9)"
+                    ],
+                    "datasource": "sFlow",
+                    "description": "Number of sflow packets collected and stored in selected time frame.",
+                    "format": "none",
+                    "gauge": {
+                        "maxValue": 100,
+                        "minValue": 0,
+                        "show": false,
+                        "thresholdLabels": false,
+                        "thresholdMarkers": true
+                    },
+                    "id": 1,
+                    "interval": null,
+                    "links": [],
+                    "mappingType": 1,
+                    "mappingTypes": [{
+                            "name": "value to text",
+                            "value": 1
+                        },
+                        {
+                            "name": "range to text",
+                            "value": 2
+                        }
+                    ],
+                    "maxDataPoints": 100,
+                    "nullPointMode": "connected",
+                    "nullText": null,
+                    "postfix": "",
+                    "postfixFontSize": "50%",
+                    "prefix": "",
+                    "prefixFontSize": "50%",
+                    "rangeMaps": [{
+                        "from": "null",
+                        "text": "N/A",
+                        "to": "null"
+                    }],
+                    "span": 10,
+                    "sparkline": {
+                        "fillColor": "rgba(31, 118, 189, 0.18)",
+                        "full": true,
+                        "lineColor": "rgb(31, 120, 193)",
+                        "show": true
+                    },
+                    "tableColumn": "",
+                    "targets": [{
+                        "bucketAggs": [{
+                            "field": "@timestamp",
+                            "id": "2",
+                            "settings": {
+                                "interval": "auto",
+                                "min_doc_count": 0,
+                                "trimEdges": 0
+                            },
+                            "type": "date_histogram"
+                        }],
+                        "dsType": "elasticsearch",
+                        "hide": false,
+                        "metrics": [{
+                            "field": "select field",
+                            "id": "1",
+                            "type": "count"
+                        }],
+                        "query": "",
+                        "refId": "A",
+                        "timeField": "@timestamp"
+                    }],
+                    "thresholds": "",
+                    "title": "Records Collected",
+                    "type": "singlestat",
+                    "valueFontSize": "100%",
+                    "valueMaps": [{
+                        "op": "=",
+                        "text": "N/A",
+                        "value": "null"
+                    }],
+                    "valueName": "total"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 259,
+            "panels": [{
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "sFlow",
+                    "fill": 2,
+                    "id": 10,
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "rightSide": true,
+                        "show": true,
+                        "total": true,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 2,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "span": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [{
+                        "bucketAggs": [{
+                            "field": "@timestamp",
+                            "id": "2",
+                            "settings": {
+                                "interval": "auto",
+                                "min_doc_count": 0,
+                                "trimEdges": 0
+                            },
+                            "type": "date_histogram"
+                        }],
+                        "dsType": "elasticsearch",
+                        "metrics": [{
+                            "field": "select field",
+                            "id": "1",
+                            "type": "count"
+                        }],
+                        "refId": "A",
+                        "timeField": "@timestamp"
+                    }],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Packet Collection Rate",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [{
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "content": "##### Packet Collection Rate\nThis graph shows the rate at which sflow packets come through the switch and are collected by the elasticsearch server.",
+                    "id": 11,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 2,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        }
+    ],
+    "schemaVersion": 14,
+    "style": "light",
+    "tags": [],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-7d",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "",
+    "title": "AmLight-ExP Dashboard",
+    "version": 13
+}

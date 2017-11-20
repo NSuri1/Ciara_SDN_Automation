@@ -87,3 +87,5 @@ http.port: 9200
 #
 #action.destructive_requires_name: true
 #
+
+path.repo: ["/var/elastic/backup"]
