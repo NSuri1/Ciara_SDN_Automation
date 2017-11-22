@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from elasticsearch import Elasticsearch, client
 from datetime import date, timedelta
 import configparser
