@@ -48,11 +48,13 @@ es_host = config.get('Elasticsearch', 'Hostname')
 es = Elasticsearch(es_host)
 snapshot_client = client.SnapshotClient(es)
 
+log_location ="{LOG_LOCATION}"
+
 try:
     backup_yesterday()
-    with open("backup_log.txt", "a") as log:
+    with open(log_location, "a") as log:
         log.write("%s: Started backup process." % date.today())
 except Exception as e:
-    with open("backup_log.txt", "a") as log:
+    with open(log_location, "a") as log:
         log.write("%s: WARNING: An exception occurred..." % date.today())
-        log.write(e)
+        log.write(str(e))
