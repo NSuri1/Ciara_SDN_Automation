@@ -53,8 +53,8 @@ log_location ="{LOG_LOCATION}"
 try:
     backup_yesterday()
     with open(log_location, "a") as log:
-        log.write("%s: Started backup process." % date.today())
+        log.write("%s: Started backup process.\n" % date.today())
 except Exception as e:
     with open(log_location, "a") as log:
-        log.write("%s: WARNING: An exception occurred..." % date.today())
-        log.write(str(e))
+        log.write("%s: WARNING: An exception occurred...\n" % date.today())
+        log.write("%s\n" % str(e))
