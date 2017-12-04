@@ -50,6 +50,9 @@ snapshot_client = client.SnapshotClient(es)
 
 try:
     backup_yesterday()
+    with open("backup_log.txt", "a") as log:
+        log.write("%s: Started backup process." % date.today())
 except Exception as e:
-    print('WARNING: An exception occurred...')
-    print(e)
+    with open("backup_log.txt", "a") as log:
+        log.write("%s: WARNING: An exception occurred..." % date.today())
+        log.write(e)
