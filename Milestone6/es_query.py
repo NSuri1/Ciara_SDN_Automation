@@ -90,10 +90,13 @@ class ElasticQuery:
         result = self.es_obj.search(index=index, body=body)
         return result['aggregations']['1']['value'] / 1000000000000
 
-    def top_ten_talkers(self):
-        pass
-
-    def filter_by_vlan(self, filtered_vlans):
+    def top_talkers(self):
+        """
+        Calculate top 100 talkers, which is defined as
+        top 100 srcAS-dstAS flows ranked in descending order
+        of packetSize, for the day prior
+        :return: dictionary of top 100 talkers
+        """
         pass
 
     def get_yesterday_date(self):
