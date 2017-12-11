@@ -21,17 +21,19 @@ def read_config_file(config_file):
 
     return config
 
-
+# Read config file for login info
 config = read_config_file("./Credentials.txt")
 username = config.get("phpIPAM", "Username")
 password = config.get("phpIPAM", "Password")
 
 es_location = config.get("Elasticsearch", "Hostname")
 
+# Create ipam object to pass to Elasticquery class
 ipam = phpIPAM("https://apps.amlight.net/phpipam", "amlight",
                username, password)
 
 test = ElasticQuery(es_location, ipam)
 
+# Print traffic and top talkers
 print(test.get_traffic(filter_vlans=False))
 print(json.dumps(test.top_talkers(filter_vlans=True), indent=4))
