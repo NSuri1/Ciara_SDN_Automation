@@ -2,7 +2,6 @@
 from elasticsearch import Elasticsearch, client
 from datetime import date, timedelta
 from phpIPAM import phpIPAM
-import json
 
 
 class ElasticQuery:
@@ -70,8 +69,9 @@ class ElasticQuery:
                 "1": {
                     "sum": {
                         "field": "PacketSize",
-                        "script": "doc[\"PacketSize\"].value *"
-                                 "doc[\"SampleRate\"].value"
+                        "script": "doc['PacketSize'].value *"
+                                  "doc['SampleRate'].value *"
+                                  "0.000000000001"
                     }
                 }
             }
@@ -88,16 +88,69 @@ class ElasticQuery:
         index = 'sflow-%s' % self.get_yesterday_date()
 
         result = self.es_obj.search(index=index, body=body)
-        return result['aggregations']['1']['value'] / 1000000000000
+        return result['aggregations']['1']['value']
 
-    def top_talkers(self):
+    def top_talkers(self, filter_vlans=False):
         """
         Calculate top 100 talkers, which is defined as
         top 100 srcAS-dstAS flows ranked in descending order
         of packetSize, for the day prior
         :return: dictionary of top 100 talkers
         """
-        pass
+        body = {
+            "query": {
+                "bool": {
+                    "must": [{
+                        "query_string": {
+                            "query": "*",
+                            "analyze_wildcard": True
+                        }
+                    }],
+                    "must_not": []
+                }
+            },
+            "size": 0,
+            "aggs": {
+                "3": {
+                    "terms": {
+                        "script": {
+                            "inline": "return doc['srcAS.asn'].value +"
+                                      " '-' + doc['dstAS.asn'].value",
+                            "lang": "painless"
+                        },
+                        "size": 100,
+                        "order": {
+                            "2": "desc"
+                        },
+                        "valueType": "string"
+                    },
+                    "aggs": {
+                        "2": {
+                            "sum": {
+                                "field": "PacketSize",
+                                "script": "doc['PacketSize'].value *"
+                                          " doc['SampleRate'].value *"
+                                          " 0.000000000001"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if filter_vlans:
+            vlan_list = self.get_commodity_vlan_ids(self.ipam_obj)
+            body['query']['bool']['must_not'].append({
+                "terms": {
+                    "in_vlan": vlan_list
+                }
+            })
+
+        index = 'sflow-%s' % self.get_yesterday_date()
+
+        result = self.es_obj.search(index=index, body=body)
+
+        return result['aggregations']['3']['buckets']
 
     def get_yesterday_date(self):
         return (date.today() - timedelta(1)).strftime('%Y.%m.%d')

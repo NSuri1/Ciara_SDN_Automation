@@ -1,6 +1,7 @@
 from es_query import ElasticQuery
 import configparser
 from phpIPAM import phpIPAM
+import json
 
 
 def read_config_file(config_file):
@@ -32,4 +33,5 @@ ipam = phpIPAM("https://apps.amlight.net/phpipam", "amlight",
 
 test = ElasticQuery(es_location, ipam)
 
-print(test.get_traffic(filter_vlans=True))
+print(test.get_traffic(filter_vlans=False))
+print(json.dumps(test.top_talkers(filter_vlans=True), indent=4))
